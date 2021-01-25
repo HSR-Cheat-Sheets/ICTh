@@ -1,0 +1,185 @@
+\documentclass[a4paper, landscape , 8pt]{scrartcl}
+
+% use language german
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english, ngerman]{babel} % \selectlanguage{english} if  needed
+\usepackage{lmodern} % use modern latin fonts
+
+% format
+\usepackage{geometry}
+\geometry{top=1.2cm,left=0.4cm,right=0.4cm}
+\textheight = 558pt
+
+%autor
+\usepackage{authblk}
+
+%tabular
+\usepackage{tabularx}
+
+% math
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{enumitem}
+
+% graphic
+\usepackage{graphicx}
+\graphicspath{{graphic/}} 
+
+%colors
+% \usepackage{xcolor}
+
+% Multi Columns
+\usepackage{multicol}
+
+%compact items
+\setlist{topsep=0pt, leftmargin=3mm, nolistsep}
+\setlength{\parindent}{0cm}
+
+%define header and footer
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\fancyhead[RO]{\AUTHOR| \INSTITUTE}
+\fancyhead[LO]{\TITLE}
+\fancyfoot[RO]{\today}
+\fancyfoot[LO]{Created with \LaTeX}
+\renewcommand\headrulewidth{0pt}
+\renewcommand\footrulewidth{0pt}
+\headsep = -2pt
+\footskip = 0pt
+
+
+% Define Section Format
+\usepackage{sectsty}
+\usepackage{titlesec}
+\usepackage[dvipsnames]{xcolor}
+
+\titleformat{name=\section}[block]{\sffamily\normalsize}{}{0pt}{\colorsection}
+\titlespacing*{\section}{0pt}{0pt}{0pt}
+\newcommand{\colorsection}[1]{%
+	\colorbox{sectioncolor!80}{\parbox{0.98\linewidth}{\vspace{-1pt}\color{white}\ #1 \vspace{-2pt}}}}
+
+% Define Subsection Format
+\titleformat{name=\subsection}[block]{\sffamily\small}{}{0pt}{\colorsubsection}
+\titlespacing*{\subsection}{0pt}{0pt}{0pt}
+\newcommand{\colorsubsection}[1]{%
+	\colorbox{subsectioncolor!80}{\parbox{0.98\linewidth}{\vspace{-1pt}\color{black}\ #1 \vspace{-2pt}}}}
+
+% Define SubSubsection Format
+\titleformat{name=\subsubsection}[block]{\sffamily\small}{}{0pt}{\colorsubsubsection}
+\titlespacing*{\subsubsection}{0pt}{0pt}{0pt}
+\newcommand{\colorsubsubsection}[1]{%
+	\colorbox{subsubsectioncolor!60}{\parbox{0.98\linewidth}{\vspace{-1pt}\color{black}\ #1 \vspace{-2pt}}}}
+
+
+%define color
+\definecolor{sectioncolor}{HTML}{052639}
+\definecolor{subsectioncolor}{HTML}{468189}
+\definecolor{subsubsectioncolor}{HTML}{8DB9B1}
+\definecolor{b}{RGB}{0, 115, 192 } %Default highlite color
+\definecolor{p}{RGB}{0, 43, 54} %Dark page color
+\definecolor{t}{RGB}{131, 148, 150} %Dark text color
+\definecolor{darkgreen}{RGB}{0,150,0}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\definecolor{DarkPurple}{rgb}{0.4, 0.1, 0.4}
+\definecolor{DarkCyan}{rgb}{0.0, 0.5, 0.4}
+\definecolor{LightLime}{rgb}{0.3, 0.5, 0.4}
+\definecolor{Blue}{rgb}{0.0, 0.0, 1.0}
+\definecolor{h}{RGB}{1, 101, 163}
+
+% Code Listings
+\usepackage{listings}
+\usepackage{color}
+\usepackage{beramono}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    linkcolor={black},
+    citecolor={blue!50!black},
+    urlcolor={blue!80!black}
+}
+
+\definecolor{bluekeywords}{rgb}{0,0,1}
+\definecolor{greencomments}{rgb}{0,0.5,0}
+\definecolor{redstrings}{rgb}{0.64,0.08,0.08}
+\definecolor{xmlcomments}{rgb}{0.5,0.5,0.5}
+\definecolor{types}{rgb}{0.17,0.57,0.68}
+\definecolor{codeBackground}{RGB}{250,250,250}
+
+
+\lstdefinestyle{JS}{
+language=java,
+backgroundcolor = \color{codeBackground},   % color for the background.
+basicstyle=\ttfamily\scriptsize,            % font size/family/etc. for source
+keywordstyle=\color{RoyalBlue}\ttfamily,    % style of keywords in source language
+stringstyle=\color{darkgreen}\ttfamily,     % style of strings in source language
+commentstyle=\color{DarkPurple!60}\ttfamily,% style of comments in source language
+escapeinside={£}{£},                        % specify characters to escape from source code to LATEX
+showspaces=false,                           % emphasize spaces in code (true/false)
+showstringspaces=false,
+showtabs=false,                             % emphasize tabulators in code (true/false)
+numbers=none,                               % position of line numbers (left/right/none)
+numberstyle=\tiny\color{darkgray}\ttfamily, % style used for line-numbers
+stepnumber=1,                               % distance of line-numbers from the code
+tabsize=1,                                  % default tabsize
+breaklines=true,                            % automatic line-breaking
+breakatwhitespace=true,                     % sets if automatic breaks should only happen at whitespaces
+frame=single,                               % showing frame outside code (none/leftline/topline/bottomline/lines/single/shadowbox)
+xleftmargin=3pt,
+xrightmargin=1pt,
+frameround=tttt,                            % enable round corners
+rulecolor = \color{lightgray},              % Specify the colour of the frame-box
+aboveskip = 1pt,
+belowskip = 1pt,
+captionpos = b                              % position of caption (t/b)
+}
+\lstset{
+	style=JS
+	% literate=  % Allow for German characters in lstlistings.
+	% {Ö}{{\"O}}1
+	% {Ä}{{\"A}}1
+	% {Ü}{{\"U}}1
+	% {ü}{{\"u}}1
+	% {ä}{{\"a}}1
+	% {ö}{{\"o}}1}
+}
+
+
+
+
+% Theorems \begin{mytheo}{title}{label}
+\usepackage{tcolorbox}
+\tcbuselibrary{theorems}
+\newtcbtheorem[number within=section]{definiton}{Definition}%
+{fonttitle=\bfseries}{def}
+\newtcbtheorem[number within=section]{remember}{Merke}%
+{fonttitle=\bfseries}{rem}
+\newtcbtheorem[number within=section]{hint}{Hinweis}%
+{fonttitle=\bfseries}{hnt}
+
+% new section -> new page
+% \let\stdsection\section
+% \renewcommand\section{\clearpage\stdsection}
+
+% Front page
+\newcommand{\AUTHOR}{Marius Zindel }
+\newcommand{\INSTITUTE}{Hochschule für Technik Rapperswil}
+
+%dotted rule
+\usepackage{dashrule}
+\usepackage{tikz}
+\usetikzlibrary{decorations.markings}
+\newcommand{\drule}[3][0]{
+	\tikz[baseline]{\path[decoration={markings,
+	mark=between positions 0 and 1 step 2*#3
+	with {\node[fill, circle, minimum width=#3, inner sep=0pt, anchor=south west] {};}},postaction={decorate}]  (0,#1) -- ++(#2,0);}}
+
+
+%no indentation
+\setlength{\parindent}{0cm}
+
+\usepackage{lipsum}

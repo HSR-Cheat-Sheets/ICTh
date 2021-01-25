@@ -1,0 +1,42 @@
+%import template
+\input{./styles/template.tex}
+
+% DocInfo
+\newcommand{\SUBJECT}{}
+\newcommand{\TITLE}{Cheat Sheet Informations und Codierungs Theorie}
+
+\begin{document}
+
+%import front page
+% \input{./front.tex}
+
+%do multicols
+\begin{multicols*}{5}
+    \setlength{\columnseprule}{0.4pt}
+		\footnotesize
+		
+%import tableofcontents
+% \input{./tableofcontents.tex}
+
+	\input{content/01-signalparamter.tex}
+	\input{content/02-signale.tex}
+	\input{content/03-signale_analysieren.tex}
+	\input{content/04-signale_und_rauschen.tex}
+	\input{content/05-modulation.tex}
+	\input{content/06-sprache_digitalisieren.tex}
+	\input{content/07-modulationsverfahren.tex}
+	\input{content/08-wahrscheinlichkeit.tex}
+	\input{content/09-grundlagen.tex}
+	\input{content/10-quellcodierung_kompression.tex}
+	\input{content/11-Verschlüsselung.tex}
+	\input{content/12-kanalmodell.tex}
+	\input{content/13-block_codes.tex}
+	\input{content/14-faltungscodes.tex}
+
+
+
+\end{multicols*}
+
+% \input{./appendix.tex}
+
+\end{document}
