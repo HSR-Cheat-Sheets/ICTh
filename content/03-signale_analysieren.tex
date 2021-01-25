@@ -3,6 +3,36 @@
 
 \section{Leitungscodierung}
 
+\subsection{Übersicht}
+\subsubsection{Nur Nullstellen}
+    \begin{tabular}{|l|l|l|l|l|}
+        \hline
+        \multirow{2}{*}{Leitungscode} & \multicolumn{2}{l|}{DC-Freiheit} & \multicolumn{2}{l|}{Taktinf} \\ \cline{2-5}
+        & Ja             & Nein            & Ja               & Nein              \\ \hline
+        Bipolarer NRZ            &                & X               &                  & X                 \\ \hline
+        Unipolarer NRZ           & X               &                &                 &  X                 \\ \hline
+        Unipolarer NRZ Mark      & *              &  *               &                 &  X                 \\ \hline
+        Bipolarer Manchester     & X              &                 & X                &                   \\ \hline
+        Unipolarer Manchester    &               &  X               & X                &                   \\ \hline
+        Bipolarer AMI            & X              &                 &                 &  X                 \\ \hline
+        Unipolarer RZ			 &	X			  & 			   & 				&	X				\\ \hline
+    \end{tabular}
+*Nicht entscheidbar kommt auf vorheriges Zeichen an
+
+\subsubsection{Nur Einsstellen}
+    \begin{tabular}{|l|l|l|l|l|}
+        \hline
+        \multirow{2}{*}{Leitungscode} & \multicolumn{2}{l|}{DC-Freiheit} & \multicolumn{2}{l|}{Taktinf} \\ \cline{2-5}
+        & Ja             & Nein            & Ja               & Nein              \\ \hline
+        Bipolarer NRZ            &                & X               &                  & X                 \\ \hline
+        Unipolarer NRZ           &                & X               &                  & X                 \\ \hline
+        Unipolarer NRZ Mark      & X              &                 & X                &                   \\ \hline
+        Bipolarer Manchester     & X              &                 & X                &                   \\ \hline
+        Unipolarer Manchester    & X              &                 & X                &                   \\ \hline
+        Bipolarer AMI            & X              &                 & X                &                   \\ \hline
+        Unipolarer RZ			 &				  & X		       & X				&					\\ \hline
+    \end{tabular}
+
 \subsubsection{Unipolarer Non-Return-to-Zero Code (NRZ)}
 \begin{center}
     \includegraphics[width=\linewidth]{graphic/signale_analyisieren/Unipolarer Non-Return-to-Zero Code (NRZ).png}
