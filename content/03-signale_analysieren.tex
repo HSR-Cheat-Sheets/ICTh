@@ -1,4 +1,90 @@
 %! Author = mariuszindel
 %! Date = 25.01.21
 
-\section{Signale analysieren}
+\section{Leitungscodierung}
+
+\subsubsection{Unipolarer Non-Return-to-Zero Code (NRZ)}
+\begin{center}
+    \includegraphics[width=\linewidth]{graphic/signale_analyisieren/Unipolarer Non-Return-to-Zero Code (NRZ).png}
+\end{center}
+\vspace{-8pt}
+\begin{itemize}
+    \item Gleichspannungsanteil, auch bei Random-Daten
+    \item Verlust des Taktes bei langen Eins- und Nullfolgen
+    \item Datenfolge enthält nicht direkt Frequenzanteile bei der Taktfrequenz
+\end{itemize}
+
+
+\subsubsection{Bipolarer Non-Return-to-Zero Code (NRZ)}
+\begin{center}
+    \includegraphics[width=\linewidth]{graphic/signale_analyisieren/Bipolarer Non-Return-to-Zero Code (NRZ).png}
+\end{center}
+\vspace{-8pt}
+\begin{itemize}
+    \item Kein Gleichspannungsanteil bei Random-Daten
+    \item Gleichspannungsanteil bei langen Eins- und Nullfolgen
+    \item Verlust des Taktes bei langen Eins- und Nullfolgen
+\end{itemize}
+
+
+\subsubsection{NRZ Mark Code  (Differentielle Codierung)}
+\begin{center}
+    \includegraphics[width=\linewidth]{graphic/signale_analyisieren/NRZ Mark Code Differentielle Codierung.png}
+\end{center}
+\vspace{-8pt}
+\begin{itemize}
+    \item Robust gegen Vertauschen der Polarität (a/b Klemmen, absolute Phasenlage)
+    \item Verlust des Taktes bei langen Nullfolgen
+\end{itemize}
+
+
+\subsubsection{Return-to-Zero Code (RZ)}
+\begin{center}
+    \includegraphics[width=\linewidth]{graphic/signale_analyisieren/Return-to-Zero Code (RZ).png}
+\end{center}
+\vspace{-8pt}
+\begin{itemize}
+    \item Datensignal enthält direkt Frequenzanteile bei der Taktfrequenz
+    \item Durch Halbierung der Bitdauer Verdoppelung des Bandbreitenbedarfs
+    \item Verlust des Taktes bei langen Nullfolgen
+\end{itemize}
+
+
+\subsubsection{Bi-Phase oder Manchester Code (Ethernet)}
+\begin{center}
+    \includegraphics[width=\linewidth]{graphic/signale_analyisieren/Bi-Phase oder Manchester Code.png}
+\end{center}
+\vspace{-8pt}
+\begin{itemize}
+    \item Takt ist in jedem Datenbit vorhanden
+    \item Bei bipolarem Code ist jedes Datenbit gleichspannungsfrei
+    \item Durch Halbierung der Bitdauer Verdoppelung des Bandbreitenbedarfs
+\end{itemize}
+
+\subsubsection{Alternate Mark Inversion Code (AMI)}
+\begin{center}
+    \includegraphics[width=\linewidth]{graphic/signale_analyisieren/Alternate Mark Inversion Code (AMI).png}
+\end{center}
+\vspace{-8pt}
+\begin{itemize}
+    \item Ternärer Code mit drei Spannungspegel
+    \item Dank Alternierung Gleichspannungsfreiheit
+    \item Verlust des Taktes bei langen Nullfolgen
+\end{itemize}
+
+
+\subsubsection{Scrambling}
+\begin{center}
+    \includegraphics[width=\linewidth]{graphic/signale_analyisieren/Scrambling.png}
+\end{center}
+\vspace{-8pt}
+\begin{itemize}
+    \item Pseudozufällige Scramblingfolge z.B. aus rückgekoppeltem Schieberegister
+    \item Eliminierte lange Null- und Einsfolgen
+    \item Scrambler-Synchronisation setzt meist Rahmenstruktur der Daten voraus
+\end{itemize}
+
+
+
+%\section{Zweiseitiges Spektrum}
+%TODO
