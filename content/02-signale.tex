@@ -14,6 +14,48 @@ $f[Hz] = \frac{1}{T}$
 
 
 
+\subsection{Dauer und Bandbreite von Einzelpulsen}
+\subsubsection{Vorgehen Amplitudendichte}
+\textbf{Fragestellung:} Wie kann S(0), d.h. die Amplitudendichte bei der Frequenz f=0 Hz, einfach aus dem Verlauf des Pulses berechnet werden? Geben Sie die Formel für S(0), sowie den numerischen Wert in [V/Hz] an.\\
+\\
+\textbf{Lösung:} $S(0)=\int_{-\infty }^{\infty}s(t)dt=\int_{-T}^{T}s(t)dt=AT$ \\
+\\
+d.h. die Gesamtfläche unter der Dreiecksfunktion s(t).\\
+\\
+\textbf{Hinweis:} \\
+Bei Recktecksignalen wäre es $2*AT$\\
+Bei ms führt es zu mV/Hz
+
+\subsubsection{Energie berechnen}
+$E=\int_{-\infty}^{\infty}\frac{s^2(t)}{R}dt=\frac{1}{R}\int_{-\infty}^{\infty}s^2(t)dt=\frac{3}{4}*\frac{A^2T}{R}$
+\\
+\\
+Achtung: 3/4 und T ist modular \\
+\\
+\textbf{Hinweis:} Resultat wenn ms dann mWs (Beispiel: 3/4mWs = 0.75mJ)
+
+\subsubsection{Dauer eines Pulses berechnen}
+\textbf{Formel:} $E=\frac{A^2\tau}{R}=\frac{3}{4}*\frac{A^2T}{R}$ \\
+\textbf{nach $\tau$ auflösen $\tau$ in ms oder s}\\
+\\
+Achtung: 3/4 und T ist modular
+
+\subsubsection{Bandbreite}
+\textbf{Formel:} $E=\frac{|S(0)|^2*B}{R}=\frac{A^2T^2B}{R}=\frac{3}{4}*\frac{A^2T}{R}$\\ $B=\frac{3}{4}*\frac{1}{T}$ und damit $B=\frac{3}{4}kHz=0.75kHz$\\
+\\
+Achtung: 3/4 und T ist modular
+
+\subsubsection{Zeit-Bandbreitenprodukt}
+Wie gross ist das Zeit-Bandbreitenprodukt B\tau ?\\
+\\
+\textbf{Formel:} $B\tau=\frac{3}{4}*\frac{1}{T}*\frac{3}{4}*T$
+\\
+\\
+Achtung: 3/4 und T ist modular
+\\
+\textbf{Hinweis:} kHz und ms lösen sich auf = keine Masseinheit
+
+
 % \subsection{Frequenzspektrum}
 
 
