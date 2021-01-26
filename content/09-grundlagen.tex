@@ -5,48 +5,52 @@
 
 
 \subsection{Entscheidungsgehalt $H_0$}
+Mass für den Aufwand, der zur Bildung einer Nachricht bzw. für die Entscheidung einer Nachricht notwendig ist, ist der Entscheidungsgehalt\\
+\colorbox{lightlightgrey}{$\textcolor{blue}{H_0} = log_2(N)$} [bit]
 N = Anzahl verschiedene Zeichen\\
-\colorbox{lightlightgrey}{$\textcolor{blue}{H_0} = log_2(N)$} bit
+
+\subsection{Entscheidungsfluss}
+Der Entscheidungsfluss ist definiert als
+\colorbox{lightlightgrey}{$H_{0}^{*}=\frac{\log _{2}(N)}{\tau}\left[\frac{b i t}{s}\right]$}
+wobei $\tau$ die Zeit ist, die zur Übertragung eines Quellzeichens benötigt wird.
 
 
 \subsection{Informationsgehalt $I(x_k)$}
+Der Informationsgehalt eines Zeichens sagt aus, wie viele Elementarentscheidungen zur Bestimmung dieses Zeichens zu treffen sind.
 \colorbox{lightlightgrey}{$\textcolor{blue}{I(x_k)} -log_2(P(x_k))$}
 
 
 \subsection{Entropie H(X)}
-\colorbox{lightlightgrey}{$\textcolor{blue}{H(X)} = \sum_{k = 1}^{N}p(x_k) * I(x_k)$} \underline{bit/Zeichen}\\
+Der Informationsgehalt eines Zeichens sagt aus, wie viele Die Entropie bezeichnet den mittleren Informationsgehalt der Quelle. Sie Elementarentscheidungen zur Bestimmung dieses Zeichens zu treffen zeigt also auf, wie viele Elementarentscheidungen die Quelle/Senke im Mittel sind.
+\colorbox{lightlightgrey}{$\textcolor{blue}{H(X)} = \sum_{k = 1}^{N}p(x_k) * I(x_k)$} [bit/Zeichen]\\
 Die Entropie wird maximal, wenn jedes Zeichen gleichwahrscheinlich ist!
 
 
 \subsection{Redundanz der Quelle $R_Q$}
-\colorbox{lightlightgrey}{$R_Q = H_0 - H(X)$ bit}
+\colorbox{lightlightgrey}{$R_Q = H_0 - H(X)$} [bit/Zeichen]
 
 
-
-\subsection{Quellen ohne Gedächnis}
-
-
-
-\subsection{Quellen mit Gedächnis}
-
-
-
-
-
-\section{Code}
 \subsection{mittlere Codewortlänge L}
 \colorbox{lightlightgrey}{$L = \sum_{k = 1}^{N}p(x_k) * L(x_k)$ bit} $L(x_k) =$ Anzahl Bit für das Zeichen
+
+
 \subsection{Redundanz des Codes $R_C$}
 \colorbox{lightlightgrey}{$R_C = L - H(X)$ bit} mittlere Code Wortlänge - Entropie\\
 Um die Redundanz zu verringern sollen Zeichen mit hoher Warscheinlichkeit möglichst \textcolor{red}{kurz} sein(möglichst wenige Bits).
+
+
 \subsection{Codierungstheorem von Shannon}
 \colorbox{lightlightgrey}{$H(x)<L<H(x) + 1$}
 
+\subsection{Quellen ohne Gedächnis}
+Allgemein kann nicht von einer gedächtnislosen Quelle ausgegangen werden!
 
 
 
-\section{Markov-Quelle (Quelle mit Gedächtnis)}
+
+\subsection{Quellen mit Gedächnis (Markov-Quelle)}
 \subsection{Bedingte Wahrscheinlichkeit $P(Y|X)$}
+\begin{center}
 \begin{tabular}{ |c|c|c|c| }
     \hline
     P(Y$|$X) & y1 & y2 & y3\\
@@ -58,13 +62,17 @@ Um die Redundanz zu verringern sollen Zeichen mit hoher Warscheinlichkeit mögli
     x3 & $(x_3,y_1)$ & $(x_3,y_2)$ & $(x_3,y_3)$ \\
     \hline
 \end{tabular}
-\\
-\colorbox{lightlightgrey}{P(x1) = P(x1) * $(x_1,y_1)$ + P(x2) * $(x_2,y_1)$ + P(x3) * $(x_3,y_1)$}\\
-\colorbox{lightlightgrey}{P(x2) = P(x1) * $(x_1,y_2)$ + P(x2) * $(x_2,y_2)$ + P(x3) * $(x_2,y_3)$}\\
-\colorbox{lightlightgrey}{P(x3) = P(x1) * $(x_1,y_3)$ + P(x2) * $(x_3,y_2)$ + P(x3) * $(x_3,y_3)$}\\
+\end{center}
+
+\colorbox{lightlightgrey}{P(x1) = $P(x1) \times (x_1,y_1) + P(x2) \times (x_2,y_1) $}\\\colorbox{lightlightgrey}{$ + P(x3) \times (x_3,y_1)$}\\\\
+\colorbox{lightlightgrey}{P(x2) = $P(x1) \times (x_1,y_2) + P(x2) \times (x_2,y_2) $}\\\colorbox{lightlightgrey}{$ + P(x3) \times (x_2,y_3)$}\\\\
+\colorbox{lightlightgrey}{P(x3) = $P(x1) \times (x_1,y_3) + P(x2) \times (x_3,y_2) $}\\\colorbox{lightlightgrey}{$ + P(x3) \times (x_3,y_3)$}\\\\
 \colorbox{lightlightgrey}{1 = P(x1) + P(x2)+ P(x3)}\\
 Das ganze ist ein Gleichungssystem und muss nach P(x1), P(x2) und P(x3) aufgelöst werden!
+
+
 \subsection{Verbundwahrscheinlichkeit $P(X,Y)$}
+\begin{center}
 \begin{tabular}{ |c|c|c|c| }
     \hline
     P(X$,$Y) & y1 & y2 & y3\\
@@ -75,14 +83,29 @@ Das ganze ist ein Gleichungssystem und muss nach P(x1), P(x2) und P(x3) aufgelö
     \hline
     x3 & $(x_3,y_1)$ & $(x_3,y_2)$ & $(x_3,y_3)$ \\
     \hline
-\end{tabular}\\
+\end{tabular}
+\end{center}\\
+
 \colorbox{lightlightgrey}{$P(X,Y) = P(X_i) * P(Y_k | X_i)$}\\
 $P(Y_k | X_i) = $ Zellen aus Tabelle der bedingten Wahrscheinlichkeit
-\subsection{Entropie $H(X)$}
+\subsubsection{Entropie $H(X)$}
 Wird wie üblich berechnet. Die Werte $P(x_i)$(Wahrscheinlichkeiten der einzelnen Zeichen) werden in der Gleichung unter der Tabelle der Bedingten Wahrscheinlichkeit berechnet
-\subsection{Verbundentropie $H(X,Y)$}
+\subsubsection{Verbundentropie $H(X,Y)$}
 Wird so berechnet, dass für jede Zeile in der Tabelle von P(X,Y), die Entropie(\colorbox{lightlightgrey}{$P(x_i,y_i)*-log_2(P(x_i, y_i))$}) berechnet und am schluss alles Addiert wird(Beachte obwohl addiert wird hat es immer ein $-$MINUS! dazwischen!).\\
 \colorbox{lightlightgrey}{$-P(x1,y1) * log_2(P(x1,y1)) - P(x2,y2) * log_2(P(x2,y2)$ usw.}
-\subsection{Bedingte Entropie $H(Y|X)$}
+\subsubsection{Bedingte Entropie $H(Y|X)$}
 \colorbox{lightlightgrey}{$H(Y|X) = H(X,Y) - H(X)$}
 
+
+
+
+
+
+
+
+
+
+
+\vfill
+$$
+\columnbreak
