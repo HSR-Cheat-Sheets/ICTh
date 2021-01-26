@@ -2,3 +2,41 @@
 %! Date = 25.01.21
 
 \section{Block Code}
+
+
+
+
+
+
+\section{Hammingdistanz $h$}
+\begin{itemize}
+    \item sicher korrigierbarer Fehler, wenn
+    \item $m$ = Nachrichtenstellen
+    \item $k$ = Kontrollstellen
+\end{itemize}
+\includegraphics[width=\linewidth]{graphic/extern-reto/Hammingdistanz.png}
+Jeder Knoten ist ein \textcolor{red}{Codewort}!\\
+Sichere Erkennung von 4 Fehlern $\rightarrow$ Hammingdistanz = 5\\\\
+\subsection{Anzahl gültige Codeworte}
+\colorbox{lightlightgrey}{$2^m$}
+\subsection{Anzahl der möglichen Codeworte}
+\colorbox{lightlightgrey}{$2^{m+k}$}
+\subsection{Sicher kkorrigierbarer Fehler}
+$h$ \textcolor{red}{ungerade}: \colorbox{lightlightgrey}{$e = \frac{h - 1}{2}$}\hspace{3cm}$h$ \textcolor{red}{gerade}: \colorbox{lightlightgrey}{$e = \frac{h - 2}{2}$}
+\subsection{Dichtgepackt}
+\includegraphics[width=\linewidth]{graphic/extern-reto/Dichtgepackt.png}\\
+Wenn linker Teil = rechter Teil, so ist der Coderaum \textcolor{red}{Dichtgepackt}
+
+
+
+
+
+
+
+
+\section{Prüfmatrix eines Hammingcodes}
+\subsection{Anzahl Kontrollstellen $k$}
+Bei Hammingcodes markiert die Einheitsmatrix in der Prüfmatrix die Anzahl der Kontrollstellen \colorbox{lightlightgrey}{$k = $ Spalten der Einheitsmatrix}
+\subsection{gueltige Codeworte}
+$m$ = Anzahl Spalten der Prüfmatrix bis zur Einheitsmatrix\\
+\colorbox{lightlightgrey}{gueltige Codeworte = $2^m$}

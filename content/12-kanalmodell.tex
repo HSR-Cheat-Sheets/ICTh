@@ -2,3 +2,117 @@
 %! Date = 25.01.21
 
 \section{Kanalmodell}
+
+
+
+
+
+\section{Komprimierung}
+
+
+\subsection{Huffman}
+Berechnung der mittleren Code Wortlänge =\\ \colorbox{lightlightgrey}{$P(x)*L(x)$} Auftrittswahrscheinlichkeit * Bitlänge des Zeichens
+
+
+\subsection{Codierung}
+
+
+\subsubsection{DNA}
+Anzahl gleiche Buchstaben + Buchstaben $\rightarrow$ aaaxxc = 3a2xc
+
+
+\subsubsection{Bit-Folgen}
+Bestimmen mit welchem Wert(0 oder 1) man beginnt und dann nur die Anzahl der Folge aufschreiben\\
+000111010 $\rightarrow$ Beginnen mit 0 = 3 3 1 1 1\\Da die 3 mit 2 Bits dargestellt werden kann, muss man die Zeichenfolge mit 2 Bits darstellen:(Beginnend mit dem ausgewähltem Wert als 1 Bit)\\
+0 11 11 01 01 01
+
+
+
+
+
+
+
+
+
+\section{Kanalcodierung}
+Alle folgenden \textcolor{red}{$p(y_i|x_i)$} Werte beziehen sich auf die Kanalmatrix!\\\\
+\begin{minipage}[t]{0.15\textwidth}
+    Ein \textcolor{red}{nicht} gestörter Kanal hat als Kanalmatrix die Einheitsmatrix:\\
+    $P(Y|X) = \begin{bmatrix}
+                  1 & 0 & 0\\
+                  0 & 1 & 0\\
+                  0 & 0 & 1
+    \end{bmatrix}$
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.15\textwidth}
+    Ein \textcolor{red}{vollständig} gestörter Kanal hat die Wahrscheinlichkeiten gleichverteilt:\\
+    $P(Y|X) = \begin{bmatrix}
+                  0.3 & 0.3 & 0.3\\
+                  0.3 & 0.3 & 0.3\\
+                  0.3 & 0.3 & 0.3
+    \end{bmatrix}$
+\end{minipage}
+
+
+\subsection{Entropie H(X) = Eingang oder H(Y) = Ausgang}
+\textcolor{red}{$H(X)$} wird ganz normal berechnet\\\\
+\textcolor{red}{$H(Y)$} \\
+\colorbox{lightlightgrey}{$p(y_1) = p(x_1)*p(y_1|x_1) + p(x_2)*p(y_1|x_2) + p(x_3)*p(y_1|x_3)$}\\
+\colorbox{lightlightgrey}{$p(y_2) = p(x_1)*p(y_2|x_1) + p(x_2)*p(y_2|x_2) + p(x_3)*p(y_2|x_3)$}\\
+\colorbox{lightlightgrey}{$p(y_3) = p(x_1)*p(y_3|x_1) + p(x_2)*p(y_3|x_2) + p(x_3)*p(y_3|x_3)$}\\
+Mit diesen berechneten Wahrscheinlichkeiten für ein Zeichen, kann die Entropie ganz normal berechnet werden
+
+
+\subsection{Irrelevanz $H(Y|X)$}
+
+
+\colorbox{lightlightgrey}{$H(Y|X) = -p(x_i)*p(y_k|x_i) * log_2(p(y_k|x_i))$}\\
+Diese Formel wird für \textcolor{red}{jede} Zelle($p(y_k|x_i)$) in der \textcolor{blue}{Kanalmatrix} berechnet und voneinander subtrahiert
+\subsection{Transinformation bit/Zeichen}
+\colorbox{lightlightgrey}{$T = H(Y) - H(Y|X)$ bit/Zeichen}
+
+
+
+\subsection{Maximale Symbolrate bit/s}
+$R_{max} = T *$ Übertragungsrate
+\subsection{verlustfreie, rauschbehafteter Kanal}
+$P(Y|X) = \begin{bmatrix}
+              1 & 0 & 0\\
+              0 & 0.2 & 0.8
+\end{bmatrix}$
+
+
+
+\subsection{Kanalmatrix aus Wahrscheinlichkeiten bestimmen}
+\begin{minipage}[t]{0.15\textwidth}
+    $x_1 = 0.4, x_2 = 0.6$\\
+    $y_1 = 0.8, y_2 = 0.2$\\
+    \colorbox{lightlightgrey}{$P(Y) = P(Y|X) * P(X)$}\\
+    \colorbox{lightlightgrey}{$\begin{bmatrix}
+                                   0.8\\
+                                   0.2
+    \end{bmatrix}$ =
+    $\begin{bmatrix}
+         a & b\\
+         b & a
+    \end{bmatrix}$ *
+    $\begin{bmatrix}
+         0.4\\
+         0.6
+    \end{bmatrix}$}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.15\textwidth}
+    $0.8 = 0.4a + 0.6b$\\
+    $0.2 = 0.4b + 0.6a$\\
+\end{minipage}
+
+
+
+
+
+
+
+
+
