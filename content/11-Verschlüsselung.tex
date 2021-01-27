@@ -3,8 +3,9 @@
 
 \section{Verschlüsselung}
 
+\subsection{Asymetrisch}
 
-\subsection{RSA}
+\subsubsection{RSA berechnen}
 \includegraphics[width=\linewidth]{graphic/extern-reto/RSA.png}
 \begin{itemize}
     \item 99 = $\phi(n)$
@@ -18,6 +19,35 @@
 \end{itemize}
 \includegraphics[width=\linewidth]{graphic/extern-reto/RSASchritte.png}
 
+\subsubsection{ n und $\Phi$ berechnen}
+Primzahlen p und q müssen gegeben sein
+\begin{enumerate}
+    \item $n = p \times q$
+    \item $\Phi(n)=\Phi(p \cdot q)=(p-1) \cdot(q-1)$
+\end{enumerate}
+
+\subsubsection{inversen Schlüssel berechnen}
+Zahlen $e_1, e_2 und \Phi(n)$ müssen gegeben sein
+\begin{enumerate}
+    \item $e_1 \times d_1 mod \Phi(n) = 1$
+    \item $e_2 \times d_2 mod \Phi(n) = 1$
+\end{enumerate}
+
+\subsubsection{Anz. Schlüssel jeder mit jedem}
+$Anz. \times 2 (\rightarrow also = Anz. Paare)$
+
+
+\subsubsection{Anz. Schlüssel speichern}
+Öffentliche Schlüsselbank: 1+1\\
+sonst: $Anz. - 1$ öffentliche (der andern) + 1 + 1
+
+\subsection{Symetrisch}
+\subsubsection{Anz. Schlüssel jeder mit jedem}
+$Anz. / 2 \times (Anz. -1)$
+
+
+\subsubsection{Anz. Schlüssel speichern}
+$Anz. - 1$
 
 \vfill
 $$
