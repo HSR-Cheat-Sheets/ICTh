@@ -4,8 +4,101 @@
 \section{Kompression}
 
 
-\subsection{Huffman}
+\subsubsection{Redundanz der Quelle $R_Q$}
+\colorbox{lightlightgrey}{$R_Q = H_0 - H(X)$} [bit/Zeichen]\\
+
+\subsubsection{Entscheidungsgehalt $H_0$}
+Mass für den Aufwand, der zur Bildung einer Nachricht bzw. für die Entscheidung einer Nachricht notwendig ist, ist der Entscheidungsgehalt\\
+\colorbox{lightlightgrey}{$\textcolor{blue}{H_0} = log_2(N)$} [bit]
+N = Anzahl verschiedene Zeichen\\
+
+\subsubsection{Entropie H(X)}
+Der Informationsgehalt eines Zeichens sagt aus, wie viele Die Entropie bezeichnet den mittleren Informationsgehalt der Quelle. Sie Elementarentscheidungen zur Bestimmung dieses Zeichens zu treffen zeigt also auf, wie viele Elementarentscheidungen die Quelle/Senke im Mittel sind.
+\colorbox{lightlightgrey}{$\textcolor{blue}{H(X)} = \sum_{k = 1}^{N}p(x_k) * I(x_k)$} [bit/Zeichen]\\
+\begin{center}
+\begin{tabular}{l | l | l | l}
+    \hline
+    x   & $P(x)$    & $I(x)$                  & $P(x) \times I(x)$\\ \hline
+    A   & 0.5       & $-log_2(P(x))$          &  Multiplikation\\
+    B   & 0.15      & $-log_2(P(x))$          &  Multiplikation\\
+    C   & 0.05      & $-log_2(P(x))$          &  Multiplikation\\
+    ... & ...       & ...                     &  Multiplikation\\
+    \hline
+    \hline
+        &           &  H(X)=     & Summe der Multip.\\
+\end{tabular}
+\end{center}
+Die Entropie wird maximal, wenn jedes Zeichen gleichwahrscheinlich ist!
+
+\subsubsection{Informationsgehalt $I(x)$}
+Der Informationsgehalt eines Zeichens sagt aus, wie viele Elementarentscheidungen zur Bestimmung dieses Zeichens zu treffen sind.
+\colorbox{lightlightgrey}{$\textcolor{blue}{I(x)} = -log_2(P(x))$}
+
+
+\subsection{mittlere Codewortlänge L}
+\colorbox{lightlightgrey}{$L = \sum_{k = 1}^{N}p(x_k) * L(x_k)$ bit} $L(x_k) =$ Anzahl Bit für das Zeichen
+\begin{center}
+    \begin{tabular}{l | l | l | l}
+        \hline
+        x        &    Li    & $P(x)$     & li mitte\\ \hline
+        A        &     1    & 0.5        &  Multiplikation\\
+        B        &     2    & 0.15       &  Multiplikation\\
+        C        &     3    & 0.05       &  Multiplikation\\
+        ...      &   ...    & ...        &  Multiplikation\\
+        \hline
+        \hline
+        &           &  L=     & Summe der Multip.\\
+    \end{tabular}
+\end{center}
+
+
+\subsubsection{Entscheidungsfluss}
+Der Entscheidungsfluss ist definiert als\\
+\colorbox{lightlightgrey}{$H_{0}^{*}=\frac{\log _{2}(N)}{\tau}\left[\frac{b i t}{s}\right]$}\\
+wobei $\tau$ die Zeit ist, die zur Übertragung eines Quellzeichens benötigt wird.
+
+
+
+
+\subsection{Optimierung nach Huffman}
+\begin{enumerate}
+    \item $R_c$ alt herausfinden
+    \item Huffman optimierung mit Baum
+    \item mittlere Codewortlänge Tabelle erstellen
+    \item neues $R_c$ berechnen: $L(x) - H(x)$
+    \item Prozentrechnen: $100\% - 100 \times (R_c neu / R_c alt)$
+\end{enumerate}
+
+\subsubsection{Mittlere Codewortlänge}
 Berechnung der mittleren Code Wortlänge =\\ \colorbox{lightlightgrey}{$P(x)*L(x)$} Auftrittswahrscheinlichkeit * Bitlänge des Zeichens
+
+\subsubsection{Redundanz des Codes $R_C$}
+\colorbox{lightlightgrey}{$R_C = L - H(X)$ bit} mittlere Code Wortlänge - Entropie\\
+Um die Redundanz zu verringern sollen Zeichen mit hoher Warscheinlichkeit möglichst \textcolor{red}{kurz} sein(möglichst wenige Bits).
+
+
+
+\subsection{Likelihood}
+\subsubsection{Entscheider bestimmen}
+$P(Y \mid X)=\left[\begin{array}{ccc}0.2 & 0.5 & 0.3 \\ 0.7 & 0.2 & 0.1 \\ 0.4 & 0 & 0.6\end{array}\right]$\\
+Davon die Grössten pro Zeile wählen, aber nur einen pro Zeile/Spalte! Enscheider dann:\\
+$y_1 \rightarrow x_2$\\
+$y_2 \rightarrow x_1$\\
+$y_3 \rightarrow x_3$
+
+\subsubsection{Restfehlerwahrscheinlichkeit}
+Gegeben: $X1, X2, X3$\\
+Daraus Summe s bilden\\
+$p\left(x_{1}\right)=\frac{X1}{s}$\\
+$p\left(x_{2}\right)=\frac{X2}{s}$\\
+$p\left(x_{3}\right)=\frac{X3}{s}$\\
+
+$P(Keine Fehler) = x_2 \times p(x2) + x_1 \times p(x1) + y_3 \times p(x3)$\\
+$P(Fehler) = 1- P(Keine Fehler)$
+
+
+\subsubsection{Besserer Entscheider}
+Einen kleineren Wert aus der Matrix nehmen $\rightarrow$ Kann vorkommen, dass nun ein Wert nicht mehr geprüft wird
 
 
 \subsection{Codierung}

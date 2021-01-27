@@ -25,16 +25,19 @@ Alle folgenden \textcolor{red}{$p(y_i|x_i)$} Werte beziehen sich auf die Kanalma
 \subsection{Entropie H(X) = Eingang oder H(Y) = Ausgang}
 \textcolor{red}{$H(X)$} wird ganz normal berechnet\\\\
 \textcolor{red}{$H(Y)$} \\
-\colorbox{lightlightgrey}{$p(y_1) = p(x_1)*p(y_1|x_1) + p(x_2)*p(y_1|x_2) + p(x_3)*p(y_1|x_3)$}\\
-\colorbox{lightlightgrey}{$p(y_2) = p(x_1)*p(y_2|x_1) + p(x_2)*p(y_2|x_2) + p(x_3)*p(y_2|x_3)$}\\
-\colorbox{lightlightgrey}{$p(y_3) = p(x_1)*p(y_3|x_1) + p(x_2)*p(y_3|x_2) + p(x_3)*p(y_3|x_3)$}\\
+\colorbox{lightlightgrey}{$p(y_1) = p(x_1)*p(y_1|x_1) + p(x_2)*p(y_1|x_2)$}\\
+\colorbox{lightlightgrey}{$p(y_2) = p(x_1)*p(y_2|x_1) + p(x_2)*p(y_2|x_2)$}\\
+\colorbox{lightlightgrey}{$H(Y) = -p(y_1) \cdot \log _{2}(p(y_1))-p(y_2) \cdot \log _{2}(p(y_2))$}\\
+
 Mit diesen berechneten Wahrscheinlichkeiten für ein Zeichen, kann die Entropie ganz normal berechnet werden
 
 
 \subsection{Irrelevanz $H(Y|X)$}
 
 
-\colorbox{lightlightgrey}{$H(Y|X) = -p(x_i)*p(y_k|x_i) * log_2(p(y_k|x_i))$}\\
+\colorbox{lightlightgrey}{$H(Y|X) = -p(x_1) \times p(y_1|x_1) * log_2(p(y_1|x_1)) - p(x_1) \times p(y_1|x_2) * log_2(p(y_1|x_2))$}
+\colorbox{lightlightgrey}{$ - p(x_2) \times p(y_2|x_1) * log_2(p(y_2|x_1)) - p(x_2) \times p(y_2|x_2) * log_2(p(y_2|x_2))$ [bit/Zeichen]}
+
 Diese Formel wird für \textcolor{red}{jede} Zelle($p(y_k|x_i)$) in der \textcolor{blue}{Kanalmatrix} berechnet und voneinander subtrahiert
 \subsection{Transinformation bit/Zeichen}
 \colorbox{lightlightgrey}{$T = H(Y) - H(Y|X)$ bit/Zeichen}

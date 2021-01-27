@@ -4,39 +4,42 @@
 \section{Grundlagen}
 
 
-\subsection{Entscheidungsgehalt $H_0$}
-Mass für den Aufwand, der zur Bildung einer Nachricht bzw. für die Entscheidung einer Nachricht notwendig ist, ist der Entscheidungsgehalt\\
-\colorbox{lightlightgrey}{$\textcolor{blue}{H_0} = log_2(N)$} [bit]
-N = Anzahl verschiedene Zeichen\\
+
 
 \subsection{Entscheidungsfluss}
-Der Entscheidungsfluss ist definiert als
-\colorbox{lightlightgrey}{$H_{0}^{*}=\frac{\log _{2}(N)}{\tau}\left[\frac{b i t}{s}\right]$}
+Der Entscheidungsfluss ist definiert als\\
+\colorbox{lightlightgrey}{$H_{0}^{*}=\frac{\log _{2}(N)}{\tau}\left[\frac{b i t}{s}\right]$} \\
 wobei $\tau$ die Zeit ist, die zur Übertragung eines Quellzeichens benötigt wird.
 
 
 \subsection{Informationsgehalt $I(x_k)$}
 Der Informationsgehalt eines Zeichens sagt aus, wie viele Elementarentscheidungen zur Bestimmung dieses Zeichens zu treffen sind.
-\colorbox{lightlightgrey}{$\textcolor{blue}{I(x_k)} -log_2(P(x_k))$}
+\colorbox{lightlightgrey}{$\textcolor{blue}{I(x_k)} = -log_2(P(x_k))$}
 
 
 \subsection{Entropie H(X)}
-Der Informationsgehalt eines Zeichens sagt aus, wie viele Die Entropie bezeichnet den mittleren Informationsgehalt der Quelle. Sie Elementarentscheidungen zur Bestimmung dieses Zeichens zu treffen zeigt also auf, wie viele Elementarentscheidungen die Quelle/Senke im Mittel sind.
+Der Informationsgehalt eines Zeichens sagt aus, wie viele Die Entropie bezeichnet den mittleren Informationsgehalt der Quelle. Sie Elementarentscheidungen zur Bestimmung dieses Zeichens zu treffen zeigt also auf, wie viele Elementarentscheidungen die Quelle/Senke im Mittel sind.\\
 \colorbox{lightlightgrey}{$\textcolor{blue}{H(X)} = \sum_{k = 1}^{N}p(x_k) * I(x_k)$} [bit/Zeichen]\\
 Die Entropie wird maximal, wenn jedes Zeichen gleichwahrscheinlich ist!
 
 
-\subsection{Redundanz der Quelle $R_Q$}
-\colorbox{lightlightgrey}{$R_Q = H_0 - H(X)$} [bit/Zeichen]
 
 
-\subsection{mittlere Codewortlänge L}
-\colorbox{lightlightgrey}{$L = \sum_{k = 1}^{N}p(x_k) * L(x_k)$ bit} $L(x_k) =$ Anzahl Bit für das Zeichen
 
 
-\subsection{Redundanz des Codes $R_C$}
-\colorbox{lightlightgrey}{$R_C = L - H(X)$ bit} mittlere Code Wortlänge - Entropie\\
-Um die Redundanz zu verringern sollen Zeichen mit hoher Warscheinlichkeit möglichst \textcolor{red}{kurz} sein(möglichst wenige Bits).
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 \subsection{Codierungstheorem von Shannon}
@@ -88,8 +91,8 @@ Das ganze ist ein Gleichungssystem und muss nach P(x1), P(x2) und P(x3) aufgelö
 
 \colorbox{lightlightgrey}{$P(X,Y) = P(X_i) * P(Y_k | X_i)$}\\
 $P(Y_k | X_i) = $ Zellen aus Tabelle der bedingten Wahrscheinlichkeit
-\subsubsection{Entropie $H(X)$}
-Wird wie üblich berechnet. Die Werte $P(x_i)$(Wahrscheinlichkeiten der einzelnen Zeichen) werden in der Gleichung unter der Tabelle der Bedingten Wahrscheinlichkeit berechnet
+
+
 \subsubsection{Verbundentropie $H(X,Y)$}
 Wird so berechnet, dass für jede Zeile in der Tabelle von P(X,Y), die Entropie(\colorbox{lightlightgrey}{$P(x_i,y_i)*-log_2(P(x_i, y_i))$}) berechnet und am schluss alles Addiert wird(Beachte obwohl addiert wird hat es immer ein $-$MINUS! dazwischen!).\\
 \colorbox{lightlightgrey}{$-P(x1,y1) * log_2(P(x1,y1)) - P(x2,y2) * log_2(P(x2,y2)$ usw.}
@@ -108,4 +111,3 @@ Wird so berechnet, dass für jede Zeile in der Tabelle von P(X,Y), die Entropie(
 
 \vfill
 $$
-\columnbreak
